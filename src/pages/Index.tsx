@@ -89,56 +89,58 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-6 md:p-10">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <div className="min-h-screen bg-background p-4 md:p-8">
+      <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
-        <div className="text-center space-y-2">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+        <div className="space-y-1">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground">
             Tomorrow Planner
           </h1>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-sm">
             Plan your day with clarity and purpose
           </p>
         </div>
 
-        {/* Default Daily Routine Section */}
-        <section className="space-y-6">
-          <h2 className="section-header">Default Daily Routine</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {defaultRoutine.map((task) => (
-              <TaskCard
-                key={task.id}
-                task={task}
-                onUpdate={handleUpdateRoutine}
-                onDelete={handleDeleteRoutine}
-              />
-            ))}
-          </div>
-          <AddTaskButton onClick={handleAddRoutine} />
-        </section>
-
-        {/* Tomorrow's Tasks Section */}
-        <section className="space-y-6">
-          <h2 className="section-header">Tomorrow's Tasks</h2>
-          {tomorrowTasks.length > 0 ? (
-            <div className="grid gap-6 md:grid-cols-2">
-              {tomorrowTasks.map((task) => (
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Default Daily Routine Section */}
+          <section className="space-y-4">
+            <h2 className="section-header">Default Daily Routine</h2>
+            <div className="space-y-3">
+              {defaultRoutine.map((task) => (
                 <TaskCard
                   key={task.id}
                   task={task}
-                  onUpdate={handleUpdateTomorrow}
-                  onDelete={handleDeleteTomorrow}
+                  onUpdate={handleUpdateRoutine}
+                  onDelete={handleDeleteRoutine}
                 />
               ))}
             </div>
-          ) : (
-            <div className="text-center py-12 text-muted-foreground">
-              <p className="text-lg">No tasks planned for tomorrow yet</p>
-              <p className="text-sm mt-2">Add tasks to get started</p>
-            </div>
-          )}
-          <AddTaskButton onClick={handleAddTomorrow} />
-        </section>
+            <AddTaskButton onClick={handleAddRoutine} />
+          </section>
+
+          {/* Tomorrow's Tasks Section */}
+          <section className="space-y-4">
+            <h2 className="section-header">Tomorrow's Tasks</h2>
+            {tomorrowTasks.length > 0 ? (
+              <div className="space-y-3">
+                {tomorrowTasks.map((task) => (
+                  <TaskCard
+                    key={task.id}
+                    task={task}
+                    onUpdate={handleUpdateTomorrow}
+                    onDelete={handleDeleteTomorrow}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12 text-muted-foreground">
+                <p className="text-sm">No tasks planned for tomorrow yet</p>
+                <p className="text-xs mt-1">Add tasks to get started</p>
+              </div>
+            )}
+            <AddTaskButton onClick={handleAddTomorrow} />
+          </section>
+        </div>
       </div>
     </div>
   );

@@ -8,56 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base colors - soft and calm */
-    --background: 210 40% 98%;
-    --foreground: 220 15% 25%;
+    /* Base colors - professional and muted */
+    --background: 220 15% 97%;
+    --foreground: 220 15% 20%;
 
-    /* Card colors - subtle pastels */
+    /* Card colors - clean white */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
+    --card-foreground: 220 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover-foreground: 220 15% 20%;
 
-    /* Primary - soft indigo */
-    --primary: 235 50% 65%;
+    /* Primary - professional blue */
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - gentle lavender */
-    --secondary: 270 40% 92%;
-    --secondary-foreground: 270 30% 35%;
+    /* Secondary - subtle gray */
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 15% 30%;
 
-    /* Muted - soft neutral */
-    --muted: 220 20% 95%;
-    --muted-foreground: 220 15% 50%;
+    /* Muted - professional neutral */
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 46%;
 
-    /* Accent - soft mint */
-    --accent: 160 40% 90%;
-    --accent-foreground: 160 40% 30%;
+    /* Accent - refined blue-gray */
+    --accent: 210 20% 92%;
+    --accent-foreground: 210 20% 30%;
 
-    /* Destructive - soft coral */
-    --destructive: 0 60% 70%;
+    /* Destructive - professional red */
+    --destructive: 0 65% 51%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 220 20% 90%;
-    --input: 220 20% 92%;
-    --ring: 235 50% 65%;
+    --border: 220 15% 88%;
+    --input: 220 15% 90%;
+    --ring: 221 83% 53%;
 
     --radius: 0.375rem;
 
-    /* Task priority colors - soft pastels */
-    --task-do-first: 350 70% 85%;
-    --task-do-first-foreground: 350 60% 40%;
+    /* Task priority colors - professional tones */
+    --task-do-first: 0 65% 95%;
+    --task-do-first-foreground: 0 65% 40%;
     
-    --task-do-next: 40 80% 85%;
-    --task-do-next-foreground: 40 70% 40%;
+    --task-do-next: 35 80% 92%;
+    --task-do-next-foreground: 35 70% 35%;
     
-    --task-do-later: 200 60% 85%;
-    --task-do-later-foreground: 200 50% 40%;
+    --task-do-later: 200 50% 92%;
+    --task-do-later-foreground: 200 45% 35%;
     
-    --task-skip: 0 0% 90%;
-    --task-skip-foreground: 0 0% 50%;
+    --task-skip: 220 10% 92%;
+    --task-skip-foreground: 220 10% 45%;
 
     /* Shadow colors */
     --shadow-sm: 220 20% 80%;
@@ -81,17 +81,17 @@ All colors MUST be HSL.
 
 @layer utilities {
   .task-card {
-    @apply rounded-lg p-6 transition-all duration-300 border border-border/50;
-    box-shadow: 0 1px 3px hsla(var(--shadow-sm) / 0.1);
+    @apply rounded-lg p-4 transition-all duration-200 border border-border/60 bg-card;
+    box-shadow: 0 1px 2px hsla(var(--shadow-sm) / 0.08);
   }
 
   .task-card:hover {
-    box-shadow: 0 4px 12px hsla(var(--shadow-md) / 0.15);
+    box-shadow: 0 2px 8px hsla(var(--shadow-md) / 0.12);
     border-color: hsl(var(--border));
   }
 
   .section-header {
-    @apply text-2xl font-semibold mb-6 text-foreground/80;
+    @apply text-xl font-semibold mb-4 text-foreground;
   }
 
   .priority-do-first {
