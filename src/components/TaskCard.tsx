@@ -129,7 +129,7 @@ export const TaskCard = ({ task, onUpdate, onDelete }: TaskCardProps) => {
         <div className="pt-2">
           <span
             className={cn(
-              'inline-block px-4 py-2 rounded-full text-sm font-medium',
+              'inline-block px-4 py-2 rounded-md text-sm font-medium',
               getPriorityClasses(task.priority)
             )}
           >
