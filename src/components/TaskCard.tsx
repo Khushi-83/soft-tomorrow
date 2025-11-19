@@ -54,26 +54,26 @@ export const TaskCard = ({ task, onUpdate, onDelete }: TaskCardProps) => {
   };
 
   return (
-    <div className={cn("task-card bg-card", task.completed && "opacity-60")}>
-      <div className="flex items-start gap-4 mb-4">
+    <div className={cn("task-card", task.completed && "opacity-50")}>
+      <div className="flex items-start gap-3 mb-3">
         <Checkbox
           checked={task.completed}
           onCheckedChange={handleCompletedChange}
-          className="mt-1"
+          className="mt-0.5"
         />
-        <div className="flex-1 space-y-3">
+        <div className="flex-1 space-y-2">
           <Input
             value={task.title}
             onChange={(e) => handleTitleChange(e.target.value)}
             onFocus={() => setIsEditing(true)}
             onBlur={() => setIsEditing(false)}
-            className="text-lg font-medium border-none bg-transparent px-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+            className="text-base font-medium border-none bg-transparent px-0 focus-visible:ring-0 focus-visible:ring-offset-0 h-auto py-0"
             placeholder="Task title..."
           />
           <Input
             value={task.duration || ''}
             onChange={(e) => handleDurationChange(e.target.value)}
-            className="text-sm border-none bg-muted/50 focus-visible:ring-1 focus-visible:ring-ring"
+            className="text-xs border-none bg-muted/50 focus-visible:ring-1 focus-visible:ring-ring h-7 px-2"
             placeholder="Duration (optional)"
           />
         </div>
@@ -81,19 +81,19 @@ export const TaskCard = ({ task, onUpdate, onDelete }: TaskCardProps) => {
           variant="ghost"
           size="icon"
           onClick={() => onDelete(task.id)}
-          className="text-muted-foreground hover:text-destructive"
+          className="h-7 w-7 text-muted-foreground hover:text-destructive"
         >
-          <Trash2 className="h-4 w-4" />
+          <Trash2 className="h-3.5 w-3.5" />
         </Button>
       </div>
 
-      <div className="space-y-4">
-        <div className="space-y-2">
+      <div className="space-y-3">
+        <div className="space-y-1.5">
           <div className="flex justify-between items-center">
-            <label className="text-sm font-medium text-muted-foreground">
+            <label className="text-xs font-medium text-muted-foreground">
               Urgency
             </label>
-            <span className="text-sm font-semibold text-foreground">
+            <span className="text-xs font-semibold text-foreground">
               {task.urgency}
             </span>
           </div>
@@ -103,16 +103,16 @@ export const TaskCard = ({ task, onUpdate, onDelete }: TaskCardProps) => {
             min={1}
             max={5}
             step={1}
-            className="py-2"
+            className="py-1"
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <div className="flex justify-between items-center">
-            <label className="text-sm font-medium text-muted-foreground">
+            <label className="text-xs font-medium text-muted-foreground">
               Importance
             </label>
-            <span className="text-sm font-semibold text-foreground">
+            <span className="text-xs font-semibold text-foreground">
               {task.importance}
             </span>
           </div>
@@ -122,14 +122,14 @@ export const TaskCard = ({ task, onUpdate, onDelete }: TaskCardProps) => {
             min={1}
             max={5}
             step={1}
-            className="py-2"
+            className="py-1"
           />
         </div>
 
-        <div className="pt-2">
+        <div className="pt-1">
           <span
             className={cn(
-              'inline-block px-4 py-2 rounded-md text-sm font-medium',
+              'inline-block px-3 py-1 rounded-md text-xs font-medium',
               getPriorityClasses(task.priority)
             )}
           >

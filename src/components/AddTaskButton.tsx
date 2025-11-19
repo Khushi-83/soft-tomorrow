@@ -10,10 +10,10 @@ export const AddTaskButton = ({ onClick }: AddTaskButtonProps) => {
     <Button
       onClick={onClick}
       variant="outline"
-      className="w-full task-card border-2 border-dashed border-border hover:border-primary hover:bg-primary/5 transition-all"
+      className="w-full task-card border-2 border-dashed border-border hover:border-primary hover:bg-primary/5 transition-all h-auto py-3"
     >
-      <Plus className="h-5 w-5 mr-2" />
-      Add New Task
+      <Plus className="h-4 w-4 mr-2" />
+      <span className="text-sm">Add New Task</span>
     </Button>
   );
 };
